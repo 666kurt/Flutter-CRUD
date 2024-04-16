@@ -18,7 +18,7 @@ class _HomeScreenState extends State<HomeScreen> {
           Navigator.of(context).pushNamed('crud_screen');
         },
       ),
-      appBar: appbar('Flutter', 'Firebase'),
+      appBar: CustomAppbar(title1: 'Flutter', title2: 'Firebase'),
     );
   }
 }

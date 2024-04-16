@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class NewCRUD extends StatelessWidget {
+  final TextEditingController controller;
   final String label;
-  const NewCRUD({super.key, required this.label});
+  const NewCRUD({super.key, required this.label, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +30,7 @@ class NewCRUD extends StatelessWidget {
               borderRadius: BorderRadius.circular(10),
             ),
             child: TextField(
+              controller: controller,
               decoration: InputDecoration(
                 border: InputBorder.none,
               ),
