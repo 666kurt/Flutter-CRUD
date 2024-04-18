@@ -7,4 +7,8 @@ class DatabaseMethods {
         .doc(id)
         .set(itemMap);
   }
+
+  Future<Stream<QuerySnapshot>> getItem() async {
+    return await FirebaseFirestore.instance.collection('Items').snapshots();
+  }
 }
