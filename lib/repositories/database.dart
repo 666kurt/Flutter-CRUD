@@ -11,4 +11,11 @@ class DatabaseMethods {
   Future<Stream<QuerySnapshot>> getItem() async {
     return await FirebaseFirestore.instance.collection('Items').snapshots();
   }
+
+  Future updateItems(String id, Map<String, dynamic> itemData) async {
+    return await FirebaseFirestore.instance
+        .collection('Items')
+        .doc(id)
+        .update(itemData);
+  }
 }

@@ -4,16 +4,19 @@ import 'package:random_string/random_string.dart';
 import '../windgets/widgets.dart';
 
 class CRUDScreen extends StatefulWidget {
-  const CRUDScreen({super.key});
+  const CRUDScreen({
+    super.key,
+  });
 
   @override
   State<CRUDScreen> createState() => _CRUDScreenState();
 }
 
 class _CRUDScreenState extends State<CRUDScreen> {
-  TextEditingController nameController = new TextEditingController();
-  TextEditingController ageController = new TextEditingController();
-  TextEditingController locationController = new TextEditingController();
+  final TextEditingController nameController = new TextEditingController();
+  final TextEditingController ageController = new TextEditingController();
+  final TextEditingController locationController = new TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,6 +42,7 @@ class _CRUDScreenState extends State<CRUDScreen> {
                   'name': nameController.text,
                   'age': ageController.text,
                   'location': locationController.text,
+                  'id': id,
                 };
                 await DatabaseMethods().addItem(itemMap, id);
               },
